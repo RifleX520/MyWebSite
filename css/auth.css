@@ -1,0 +1,213 @@
+/* =========================================
+   AUTH PAGES (LOGIN + SIGNUP)
+   ========================================= */
+
+/* background – center content */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at top, #11111a 0, var(--bg) 55%);
+}
+
+/* main card */
+.auth-card {
+  background: rgba(20, 21, 29, 0.98);
+  border-radius: 26px;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 32px 26px;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.85),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+
+/* title + subtitle */
+.auth-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* form layout */
+.auth-form {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* each field group */
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.auth-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* inputs styled like the screenshot */
+.auth-input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #2b2c36;
+  background: #1a1b22;
+  color: var(--text-main);
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.auth-input::placeholder {
+  color: #6c6f83;
+  font-size: 13px;
+}
+
+.auth-input:focus {
+  background: #1c1e26;
+  border-color: #347dff;
+  box-shadow:
+    0 0 0 1px rgba(52, 125, 255, 0.4),
+    0 0 16px rgba(52, 125, 255, 0.4);
+}
+
+/* main blue button inside card */
+.auth-main-btn {
+  margin-top: 4px;
+  width: 100%;
+  border-radius: 999px;
+  padding: 11px 0;
+  font-size: 14px;
+  box-shadow:
+    0 12px 30px rgba(10, 132, 255, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* thin separator (--- or ---) */
+.auth-separator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.auth-separator span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(120, 125, 155, 0.6) 40%,
+    rgba(120, 125, 155, 0.6) 60%,
+    transparent 100%
+  );
+}
+
+/* Google button – official clean style */
+.auth-google-btn {
+  width: 100%;
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid #dadce0;
+  background: #ffffff;
+  color: #1f1f1f;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease,
+    border-color 0.15s ease;
+}
+
+.auth-google-btn:hover {
+  background: #f8f9fa;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.auth-google-btn:active {
+  transform: scale(0.98);
+}
+
+/* Real Google logo image */
+.google-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 15px;
+  filter: none;            /* removes unintended dimming */
+  opacity: 1;              /* ensures full visibility */
+}
+
+
+/* Proper icon sizing */
+.google-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.google-icon-box {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+/* footer text under card buttons */
+.auth-footer {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.auth-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* mobile tweaks */
+@media (max-width: 520px) {
+  .auth-card {
+    padding: 22px 18px 20px;
+    border-radius: 22px;
+  }
+
+  .auth-title {
+    font-size: 22px;
+  }
+}
