@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>DrivePal – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <!-- Auth-specific styles -->
+  <link rel="stylesheet" href="css/auth.css" />
+
+  <!-- Loader styles -->
+  <link rel="stylesheet" href="css/loader.css" />
+</head>
+
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-card">
+      <div class="loader-logo">DrivePal</div>
+      <p class="loader-subtitle">Finding the best ride for you...</p>
+
+      <div class="loader-orbit">
+        <div class="loader-ring"></div>
+        <div class="loader-car">🚗</div>
+      </div>
+
+      <div class="loader-progress">
+        <span class="loader-bar"></span>
+      </div>
+
+      <div class="loader-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN AUTH LAYOUT -->
+  <main class="auth-wrapper">
+    <div class="auth-card">
+      <h1 class="auth-title">DrivePal</h1>
+      <p class="auth-subtitle">Sign in to continue</p>
+
+      <form id="loginForm" class="auth-form">
+        <div class="auth-field">
+          <label for="login-email" class="auth-label">Email</label>
+          <input id="login-email" type="email" class="auth-input" placeholder="you@example.com" required />
+        </div>
+
+        <div class="auth-field">
+          <label for="login-password" class="auth-label">Password</label>
+          <input id="login-password" type="password" class="auth-input" placeholder="Enter your password" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary auth-main-btn">
+          Login
+        </button>
+      </form>
+
+      <div class="auth-separator">
+        <span></span>
+        <p>or</p>
+        <span></span>
+      </div>
+
+      <!-- Google login (using your GoogleLogo.png) -->
+      <button type="button" id="googleLoginBtn" class="auth-google-btn">
+        <div class="google-icon-box">
+          <img src="Images/GoogleLogo.png" alt="Google Logo" class="google-logo">
+        </div>
+        <span>Continue with Google</span>
+      </button>
+
+
+      <p class="auth-footer">
+        Don’t have an account?
+        <a href="./signup.html" class="auth-link">Sign up</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    function fakeLoginRedirect() {
+      document.body.classList.add("loading-active");
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 1800);
+    }
+
+    const loginForm = document.getElementById("loginForm");
+    const googleBtn = document.getElementById("googleLoginBtn");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      fakeLoginRedirect();
+    });
+
+    googleBtn.addEventListener("click", function () {
+      fakeLoginRedirect();
+    });
+  </script>
+</body>
+
+</html>
